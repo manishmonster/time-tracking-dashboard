@@ -7,10 +7,10 @@
   --title4: hsl(145, 58%, 55%);
   --title5: hsl(264, 64%, 52%);
   --title6: hsl(43, 84%, 65%);
-  --text1: hsl(226, 43%, 10%);
-  --text2: hsl(235, 46%, 20%);
-  --text3: hsl(235, 45%, 61%);
-  --text4: hsl(236, 100%, 87%);
+  --background: hsl(226, 43%, 10%);
+  --panelbg: hsl(235, 46%, 20%);
+  --color1: hsl(235, 45%, 61%);
+  --color2: hsl(236, 100%, 87%);
 }
 
 * {
@@ -19,6 +19,42 @@
 
 body {
   font-size: 18px;
+  background: var(--background);
+  min-height: 100vh;
+}
+
+body, body > * {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 7em 5em;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.row > * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.border-radius {
+  border-radius: 0.25em;
+}
+
+.bg {
+  background: var(--panelbg);
 }
 
 .attribution {
@@ -28,5 +64,39 @@ body {
 
 .attribution a {
   color: #3e52a3;
+}
+
+@media (min-width: 576px) {
+  .col-sm-12 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: calc(33.33333333% - 1em);
+    margin: 0.5em;
+    padding: 0.5em;
+  }
+  .col-md-3 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: calc(25% - 1em);
+    margin: 0.5em;
+    padding: 0.5em;
+  }
+  .col-md-9 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 75%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
